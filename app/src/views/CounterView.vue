@@ -6,7 +6,7 @@ import Counter from '../components/Counter.vue';
   <div class="counter">
     <h1>This is the counter page</h1>
 
-    <Counter/>
+    <Counter title="This component is just a simple playground"/>
 
   </div>
 </template>
@@ -14,9 +14,7 @@ import Counter from '../components/Counter.vue';
 <style>
 @media (min-width: 1024px) {
   .counter {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    border-bottom: 1px solid gray;
   }
 }
 </style>
