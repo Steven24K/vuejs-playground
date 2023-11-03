@@ -11,6 +11,17 @@ export default {
     }
   },
 
+  // Use computed properties to output data
+  computed: {
+    form() {
+      return `
+        Name: ${this.name}<br>
+        Email: ${this.email}<br>
+        Msg: ${this.msg}<br>
+      `
+    }
+  },
+
   methods: {
     submitForm(event) {
         alert(`
@@ -37,6 +48,9 @@ export default {
         Message: <textarea v-on:input="setValue($event, 'msg')" v-bind:value="msg" cols="50" rows="10"></textarea>
         <button>Submit</button>
     </form>
+
+    Output: 
+    <p v-html="form"></p>
   </div>
 </template>
 
