@@ -4,15 +4,22 @@ import { ref } from 'vue'
 export default {
   props:['title'],
   setup(props) {
+    const howMuch = ref(1)
     const count = ref(0)
 
-    function increment() {
-      count.value++
+    function increment(amount) {
+      count.value+=amount
+    }
+
+    function decrement(amount) {
+      count.value-=amount
     }
 
     return {
       count,
       increment,
+      decrement,
+      howMuch,
       props,
     }
   }
@@ -22,9 +29,10 @@ export default {
 <template>
   <div class="playground">
     <h2>{{ props.title }}</h2>
-    <button v-on:click="increment">
-      {{ count }}
-    </button>
+    How much: <input type="number" v-model="howMuch"  /> 
+    <h2>{{ count }}</h2>
+    <button v-on:click="increment(howMuch)">+</button>
+    <button v-on:click="decrement(howMuch)">-</button>
   </div>
 </template>
 
