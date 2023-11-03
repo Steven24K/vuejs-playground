@@ -22,7 +22,7 @@ export default {
 <template>
   <div class="playground">
     <h2>{{ props.title }}</h2>
-    <button @click="increment">
+    <button v-on:click="increment">
       {{ count }}
     </button>
   </div>

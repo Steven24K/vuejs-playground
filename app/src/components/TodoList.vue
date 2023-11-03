@@ -44,18 +44,18 @@ export default {
     <p>Add new item: {{ message }}</p>
     <input v-model="message" placeholder="edit me" />
 
-    <button v-if="message != ''" @click="addTodoItem">Add todo item</button>
+    <button v-if="message != ''" v-on:click="addTodoItem">Add todo item</button>
 
     <ul>
       <li v-for="item in items" :key="item.message">
         <input type="checkbox" v-model="item.done">
         {{ item.message }}
-        <button @click="removeTodo(item.message)">X</button>
+        <button v-on:click="removeTodo(item.message)">X</button>
       </li>
     </ul>
 
-    <button v-if="items.reduce((xs, x) => xs || !x.done, false)" @click="toggleAll">Check all</button>
-    <button v-if="items.reduce((xs, x) => xs || x.done, false)" @click="unToggleAll">Uncheck all</button>
+    <button v-if="items.reduce((xs, x) => xs || !x.done, false)" v-on:click="toggleAll">Check all</button>
+    <button v-if="items.reduce((xs, x) => xs || x.done, false)" v-on:click="unToggleAll">Uncheck all</button>
 
   </div>
 </template>
