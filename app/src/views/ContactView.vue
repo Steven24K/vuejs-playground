@@ -32,9 +32,9 @@ export default {
   <div class="playground">
     <h2>Contact</h2>
     <form v-on:submit.prevent="submitForm">
-        Name: <input v-on:input="setValue($event, 'name')"/>
-        Email: <input v-on:input="setValue($event, 'email')"/>
-        Message: <textarea v-on:input="setValue($event, 'msg')" cols="50" rows="10"></textarea>
+        Name: <input v-on:input="setValue($event, 'name')" v-bind:value="name"/>
+        Email: <input v-on:input="setValue($event, 'email')" v-bind:value="email"/>
+        Message: <textarea v-on:input="setValue($event, 'msg')" v-bind:value="msg" cols="50" rows="10"></textarea>
         <button>Submit</button>
     </form>
   </div>
