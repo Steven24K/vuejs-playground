@@ -18,11 +18,11 @@ export default {
     }
 
     function toggleAll() {
-      items.value = items.value.map(v => ({...v, done: true}))
+      items.value = items.value.map(v => ({ ...v, done: true }))
     }
 
     function unToggleAll() {
-      items.value = items.value.map(v => ({...v, done: false}))
+      items.value = items.value.map(v => ({ ...v, done: false }))
     }
 
     return {
@@ -30,7 +30,7 @@ export default {
       message,
       addTodoItem,
       removeTodo,
-      toggleAll, 
+      toggleAll,
       unToggleAll,
     }
   }
@@ -48,8 +48,10 @@ export default {
 
     <ul>
       <li v-for="item in items" :key="item.message">
+        <span :style="{color: item.done ? 'green' : 'red'}">
+          {{ item.message }}
+        </span>
         <input type="checkbox" v-model="item.done">
-        {{ item.message }}
         <button v-on:click="removeTodo(item.message)">X</button>
       </li>
     </ul>
