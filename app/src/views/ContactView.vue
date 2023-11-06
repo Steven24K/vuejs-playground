@@ -86,7 +86,7 @@ export default {
       Name: <input v-on:input="setValue($event, 'name')" v-bind:value="name" />
       Email: <input v-on:input="setValue($event, 'email')" v-bind:value="email" />
       Message: <textarea v-on:input="setValue($event, 'msg')" v-bind:value="msg" cols="50" rows="10"></textarea>
-      <button :disabled="!formValid()">Submit</button>
+      <button class="pr-button" :disabled="!formValid()">Submit</button>
     </form>
 
     Output:
@@ -101,7 +101,7 @@ export default {
   border: 1px solid rgb(65, 62, 62);
 }
 
-button {
+.pr-button {
   background-color: rgb(92, 158, 92);
   border: none;
   width: 30%;
