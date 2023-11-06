@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import CounterView from '../views/PlaygroundView.vue'
 import ContactView from '../views/ContactView.vue'
 import ConditionsView from '../views/ConditionsView.vue'
+import Gameview from '../views/GameView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: '/conditions',
       name: 'conditions',
       component: () => ConditionsView
+    },
+    {
+      path: '/game',
+      name: 'game', 
+      component: () => Gameview
     }
 
   ]
