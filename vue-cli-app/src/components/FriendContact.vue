@@ -14,7 +14,12 @@
 <script>
 
 export default {
-    props: ["id", "name", "phone", "email"],
+    props: {
+        id: String,
+        name: String,
+        phone: String, 
+        email: String
+    },
     data(props) {
         return {
             visible: false,
