@@ -3,7 +3,14 @@
 
   <h2>My friends:</h2>
   <ul>
-    <friend-contact v-for="friend in friends" :key="friend.id" :id="friend.id" :name="friend.name" :phone="friend.phone" :email="friend.email"></friend-contact>
+    <friend-contact 
+    v-for="friend in friends" 
+    :key="friend.id" 
+    :id="friend.id" 
+    :name="friend.name" 
+    :phone="friend.phone" 
+    :email="friend.email">
+  </friend-contact>
   </ul>
 
   <HelloWorld msg="Welcome to Your Vue.js App!" />
